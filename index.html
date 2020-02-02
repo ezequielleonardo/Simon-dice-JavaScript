@@ -108,7 +108,7 @@
 
         inicializar() {
           btnEmpezar.classList.add('hide')
-          this.nivel = 1
+          this.nivel = 7
           this.colores = {
             celeste,
             violeta,
@@ -139,9 +139,9 @@
         }
 
         iluminarSecuencia(){
-          for (var i = 0; i < this.nivel; i++ ){
-            var color = this.transformarNumeroAcolor(this.generarSecuencia[i])
-            this.iluminarColor(color)
+          for (let i = 0; i < this.nivel; i++ ){
+            const color = this.transformarNumeroAcolor(this.secuencia[i])
+            setTimeout( ()=> this.iluminarColor(color), 1000 * i )
           }
         }
 
@@ -151,7 +151,7 @@
       }
 
       apagarColor(color){
-       this.colores[color].classList.remove('linht')
+       this.colores[color].classList.remove('light')
       }
       }
 
